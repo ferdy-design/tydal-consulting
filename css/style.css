@@ -1,0 +1,197 @@
+/* Add this to your style.css file */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+header {
+    background-color: #fff; /* Adjust the color as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+header .h-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* margin-left: 20px; */
+}
+
+header .h-logo img {
+    max-height: 100px; /* Adjust the height as needed */
+    width: auto;
+}
+
+header .h-tools {
+    display: flex;
+    align-items: center;
+}
+
+header .h-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 20px;
+}
+
+header .h-menu li {
+    margin-right: 75px; /* Adjust this value as needed */
+}
+
+header .h-menu a {
+    text-decoration: none;
+    color: #333; /* Adjust the color as needed */
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    font-size: 18px; /* Increase the font size */
+}
+
+header .h-menu a:hover {
+    color: #28a745; /* Adjust the hover color as needed */
+}
+
+.slogan-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+.slogan-box {
+    background-color: rgba(135, 206, 235, 1); /* Sky Blue background */
+    padding: 40px 20px; /* Increase the padding for a larger box */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content to the left */
+    color: #fff; /* Text color */
+    height: 350px;
+    position: relative; /* Ensure the content is positioned relative to the box */
+    z-index: 1; /* Ensure the content is above the background */
+}
+
+.slogan-wrapper::after {
+    content: "";
+    background-image: url('../images/background2.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire box */
+    background-position: top; /* Focus on the top part of the image */
+    position: absolute;
+    top: 100%; /* Position the image below the slogan box */
+    left: 0;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    z-index: 0; /* Ensure the image is below the slogan box */
+}
+
+.slogan-content {
+    width: 100%; /* Ensure the content takes full width */
+    position: relative; /* Ensure the content is positioned relative to the box */
+    z-index: 2; /* Ensure the content is above the background */
+}
+
+.slogan-content p {
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    font-size: 32px; /* Increase the font size */
+    color: #fff; /* Text color */
+    margin: 50px;
+    text-align: left; /* Align text to the left */
+}
+
+.consultant-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #fff; /* Light background color */
+    margin: 300px 300px 20px 300px; /* Add top margin to create space */
+}
+
+.profile-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.profile-text h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #555;
+}
+
+.profile-image {
+    flex: 1;
+    text-align: right;
+}
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Add rounded corners to the image */
+}
+
+footer {
+    background-image: url('../images/background2.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire footer */
+    background-position: bottom; /* Focus on the bottom part of the image */
+    padding: 40px 20px; /* Add padding for spacing */
+    color: #fff; /* Text color */
+    text-align: center; /* Center the text */
+}
+
+.footer-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Add rounded corners to the content box */
+}
+
+.footer-content p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.footer-content a {
+    color: #fff; /* Link color */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.contact-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #555;
+}
+
+.contact-section a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
