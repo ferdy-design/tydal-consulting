@@ -18,8 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const ROW = 20;
     const COL = 10;
     const SQ = 20; // Size of a square for the main board
-    const NEXT_SQ = 20; // Size of a square for the next piece canvas (can be adjusted)
+    const NEXT_SQ = 20; // Size of a square for the next piece canvas
     const VACANT = "#FFF"; // Color of an empty square
+
+    // Set canvas dimensions explicitly
+    canvas.width = COL * SQ;
+    canvas.height = ROW * SQ;
+    // Also set the CSS display size to match the drawing surface
+    canvas.style.width = `${COL * SQ}px`;
+    canvas.style.height = `${ROW * SQ}px`;
+
+    // Increase next piece canvas size to 5x5
+    const nextPreviewSize = 5;
+    nextPieceCanvas.width = nextPreviewSize * NEXT_SQ;
+    nextPieceCanvas.height = nextPreviewSize * NEXT_SQ;
+    // Also set the CSS display size for the next piece canvas
+    nextPieceCanvas.style.width = `${nextPreviewSize * NEXT_SQ}px`;
+    nextPieceCanvas.style.height = `${nextPreviewSize * NEXT_SQ}px`;
 
     // Draw a square (modified to accept context and square size)
     function drawSquare(ctx, x, y, color, sqSize) {
@@ -79,18 +94,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const piece = nextP.tetromino[0]; // Use the initial rotation
         const color = nextP.color;
-        const pieceSize = piece.length; // Size of the tetromino matrix (e.g., 3x3 or 4x4)
-        const canvasWidth = nextPieceCanvas.width;
-        const canvasHeight = nextPieceCanvas.height;
+        const pieceMatrixSize = piece.length; // Size of the tetromino matrix (e.g., 2, 3, or 4)
+        // Use the updated canvas dimensions (now 5x5 grid)
+        const canvasGridWidth = nextPieceCanvas.width / NEXT_SQ; // Should be 5
+        const canvasGridHeight = nextPieceCanvas.height / NEXT_SQ; // Should be 5
 
-        // Calculate offsets to center the piece
-        const offsetX = Math.floor((canvasWidth / NEXT_SQ - pieceSize) / 2);
-        const offsetY = Math.floor((canvasHeight / NEXT_SQ - pieceSize) / 2);
+        // Calculate offsets to center the piece's matrix within the 5x5 grid
+        const offsetX = Math.floor((canvasGridWidth - pieceMatrixSize) / 2);
+        const offsetY = Math.floor((canvasGridHeight - pieceMatrixSize) / 2);
 
-        for (let r = 0; r < pieceSize; r++) {
-            for (let c = 0; c < pieceSize; c++) {
+        for (let r = 0; r < pieceMatrixSize; r++) {
+            for (let c = 0; c < pieceMatrixSize; c++) {
                 if (piece[r][c]) {
-                    drawSquare(nextPieceContext, offsetX + c, offsetY + r, color, NEXT_SQ);
+                    // Ensure drawing stays within the next piece canvas bounds if piece is large (like I)
+                    if (offsetX + c < canvasGridWidth && offsetY + r < canvasGridHeight) {
+                        drawSquare(nextPieceContext, offsetX + c, offsetY + r, color, NEXT_SQ);
+                    }
                 }
             }
         }
