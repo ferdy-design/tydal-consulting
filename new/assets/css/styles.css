@@ -1,0 +1,559 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #444; /* Slightly lighter text */
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    color: #0056b3; /* Slightly brighter blue */
+}
+
+a {
+    color: #0066cc; /* Updated link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1000px; /* Or your preferred content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Add horizontal padding if needed, adjust section padding accordingly */
+}
+
+section {
+    padding: 80px 0; /* Adjust section padding, horizontal padding is now on .container */
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: #eef6ff; /* Lighter blue background for alternating sections */
+}
+
+/* Header & Navigation */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    /* Use one of the new images */
+    background: url('../images/tydalen-sommer.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 80px 20px; /* Reduced top/bottom padding to make it shorter */
+    text-align: center;
+    position: relative;
+}
+
+.hero::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Slightly darker overlay */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #20c997; /* Teal */
+    color: white;
+    padding: 15px 35px; /* Slightly larger button */
+    border-radius: 8px; /* Increased border-radius */
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Ensure transformations work */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: none; /* Remove border if not needed */
+}
+
+.cta-button:hover {
+    background-color: #17a2b8; /* Darker teal on hover */
+    text-decoration: none;
+    transform: translateY(-2px); /* Add subtle lift */
+}
+
+/* About Section */
+/* Apply max-width and centering to the inner container instead */
+#about .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px; /* Keep content padding */
+}
+
+.about-container {
+    display: flex;
+    gap: 40px; /* Increased gap between image and text */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.about-image-box {
+    flex: 0 0 250px; /* Revert to previous fixed width */
+    text-align: center;
+    /* Removed background properties, padding, box-shadow from container */
+    position: static; /* Revert position if changed */
+}
+
+.profile-pic {
+    width: 220px; /* Increased size */
+    height: 220px; /* Increased size */
+    border-radius: 50%; /* Revert to circular */
+    border: 4px solid #0066cc; /* Revert border color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    max-width: 100%; /* Ensure it doesn't overflow container */
+}
+
+.about-text-box {
+    flex: 1; /* Allow text box to take remaining space */
+    text-align: left;
+}
+
+.about-text-box h2 {
+    margin-top: 0; /* Remove top margin if image is taller */
+    margin-bottom: 15px;
+}
+
+.about-text-box p {
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px; /* Increased border-radius */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
+}
+
+.service-item h3 {
+    margin-top: 15px; /* Add space below icon */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 2.5em; /* Adjust icon size */
+    color: #20c997; /* Use theme color (teal) */
+    margin-bottom: 15px; /* Space between icon and heading */
+    text-align: center;
+}
+
+/* Companies Section */
+#companies {
+    /* Inherits background from section:nth-child(odd) or even */
+    overflow: hidden; /* Hide overflow for the conveyor belt */
+}
+
+.conveyor-belt-container {
+    width: 100%;
+    max-width: 700px; /* Control the visible width */
+    margin: 40px auto 0;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 15px; /* Adjusted padding */
+    border-radius: 8px; /* Slightly smoother radius */
+    background-color: #fff; /* Ensure white background */
+    /* Add box-shadow for elevated effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+}
+
+.conveyor-belt {
+    display: flex;
+    width: fit-content; /* Adjust width based on content */
+    animation: conveyor 15s linear infinite; /* Adjust duration as needed */
+}
+
+.conveyor-belt span {
+    padding: 0 40px; /* Increased space between names */
+    font-size: 1.3em; /* Slightly larger font */
+    font-weight: 500; /* Slightly less bold */
+    color: #444; /* Match body text color */
+    white-space: nowrap;
+    letter-spacing: 0.5px; /* Add subtle letter spacing */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Example: Change font */
+}
+
+.conveyor-belt span small {
+    display: block; /* Make small tag appear on new line */
+    font-size: 0.7em; /* Smaller font size */
+    color: #666; /* Lighter text color */
+    font-weight: normal; /* Ensure normal weight */
+    margin-top: 3px; /* Small space above description */
+}
+
+@keyframes conveyor {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        /* Adjust this percentage based on the number and width of items */
+        /* With 6 items, the first set takes up 1/2 = 50% of the total width */
+        transform: translateX(-50%);
+    }
+}
+
+/* Optional: Pause animation on hover */
+.conveyor-belt-container:hover .conveyor-belt {
+    animation-play-state: paused;
+}
+
+/* Tetris Game Section */
+#tetris-game {
+    background-color: #f8f9fa; /* Light background for this section */
+}
+
+#tetris-game h2 {
+    color: #333; /* Darker heading for contrast */
+    margin-bottom: 30px;
+}
+
+.tetris-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#tetris-canvas {
+    border: 3px solid #333;
+    background-color: #fff; /* White background for the game area */
+}
+
+/* Style for the next piece canvas */
+#next-piece-canvas {
+    display: block; /* Make it a block element */
+    margin: 5px auto 15px auto; /* Center it and add margin */
+    border: 1px solid #ddd; /* Optional: add a border */
+    background-color: #fff; /* Match game canvas background */
+}
+
+.tetris-info {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    min-width: 150px;
+}
+
+.tetris-info p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tetris-info span {
+    font-weight: bold;
+}
+
+.tetris-info button {
+    margin-top: 15px; /* Add space above the button */
+    /* Inherit cta-button styles or add specific ones */
+    padding: 8px 15px; /* Adjust padding if needed */
+    font-size: 0.9em;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #0056b3; /* Match heading color */
+    color: #fff;
+}
+
+#contact h2 {
+    color: #fff;
+    font-size: 2.8em; /* Increased font size for the contact header */
+    margin-bottom: 40px; /* Add some space below the header */
+}
+
+/* Style for links specifically within the contact details section */
+#contact .contact-details a {
+    color: #fff; /* Make email link white */
+    text-decoration: underline; /* Add underline for clarity */
+}
+
+#contact .contact-details a:hover {
+    color: #eee; /* Slightly off-white on hover */
+}
+
+#contact .contact-details hr {
+    width: 80%; /* Make the line shorter (e.g., 50% of its container) */
+    margin: 40px 0; /* Adjust vertical margin, set horizontal margin to 0 (it's left-aligned by default) */
+    border: none; /* Remove default border */
+    border-top: 1px solid #aaeaff; /* Set custom border style */
+}
+
+/* Increase specificity for social links */
+#contact .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #20c997;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #20c997;
+    color: #fff !important; /* Ensure white text, added !important for certainty */
+    width: 120px;
+    text-align: center;
+    font-weight: normal;
+    box-sizing: border-box;
+    text-decoration: none; /* Ensure no underline for buttons */
+}
+
+#contact .social-links a:hover {
+    background-color: #17a2b8;
+    color: #fff;
+    text-decoration: none;
+    border-color: #17a2b8;
+}
+
+#contact .container {
+    max-width: 1500px; /* Increase max-width for this section */
+    /* Or use max-width: none; padding: 0 40px; for full width with padding */
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px; /* Adjusted gap back slightly as max-width increases */
+    text-align: left;
+    justify-content: space-between; /* Distribute space between the items */
+}
+
+.contact-details {
+    flex: 1; /* Allow details to take up more space if needed */
+    min-width: 280px;
+}
+
+.contact-form {
+    flex: 0 1 40%; /* Don't grow, shrink if needed, aim for 40% width */
+    max-width: 450px; /* Add a max-width to prevent it getting too wide */
+    min-width: 280px;
+}
+
+.contact-details p {
+    margin-bottom: 75px; /* Increased bottom margin for more vertical space */
+    line-height: 1.8; /* Slightly increased line height */
+    font-size: 1.15em; /* Increased font size slightly more */
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Make inputs and textarea take full width of their container */
+    padding: 15px; /* Increase padding for bigger size */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Increased border-radius */
+    font-size: 1em; /* Adjust font size if needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin-top: 5px; /* Add a little space above the input */
+    font-family: inherit; /* Ensure inputs inherit the body font */
+}
+
+/* Style placeholders consistently */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    font-family: inherit; /* Use the same font as the input/textarea */
+    font-size: inherit;   /* Use the same font size */
+    color: #999; /* Optional: A common placeholder color */
+    /* Add vendor prefixes if older browser support is critical */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Set a minimum height for the textarea */
+}
+
+.contact-form button {
+    margin-top: 10px; /* Add space above the button */
+    background-color: #20c997; /* Teal background */
+    border-color: #20c997; /* Match border color */
+    border-radius: 8px; /* Increased border-radius */
+    color: #fff; /* White text */
+    padding: 10px 25px; /* Example specific padding */
+    font-size: 1em;
+    border: none; /* Ensure no default border */
+    transition: background-color 0.3s ease; /* Add transition */
+}
+
+.contact-form button:hover {
+    background-color: #17a2b8; /* Darker teal on hover */
+    border-color: #17a2b8;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0; /* Remove potential gap */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    #about .container {
+        padding: 0 15px; /* Adjust padding for mobile */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 30px;
+    }
+
+    .about-image-box {
+        flex-basis: auto; /* Reset flex basis */
+        width: auto; /* Let padding define width relative to content */
+        max-width: 250px; /* Match the desktop size or adjust as needed */
+    }
+
+    .profile-pic {
+        width: 200px; /* Increased mobile size */
+        height: 200px; /* Increased mobile size */
+    }
+
+    .about-text-box {
+        text-align: center; /* Center text on mobile */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Show mobile menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .contact-container {
+        flex-direction: column; /* Explicitly stack columns on smaller screens */
+        gap: 40px;
+    }
+}
